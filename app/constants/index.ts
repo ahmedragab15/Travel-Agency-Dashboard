@@ -1,4 +1,5 @@
 import type { AxisModel } from "@syncfusion/ej2-react-charts";
+import { formatDate } from "~/lib/utils";
 
 export const sidebarItems = [
   {
@@ -18,6 +19,84 @@ export const sidebarItems = [
     icon: "/assets/icons/itinerary.svg",
     label: "AI Trips",
     href: "/trips",
+  },
+];
+
+export const user = {
+  name: "Ahmed",
+};
+export const dashboardStats: DashboardStats = {
+  totalUsers: 12450,
+  usersJoined: { currentMonth: 218, lastMonth: 176 },
+  totalTrips: 3210,
+  tripsCreated: { currentMonth: 150, lastMonth: 250 },
+  userRole: { total: 62, currentMonth: 25, lastMonth: 15 },
+};
+export const allTrips: TripCardProps[] = [
+  {
+    id: 1,
+    name: "Tropical Rewind",
+    imageUrl: "/assets/images/sample1.jpg",
+    itinerary:  "Thailand" ,
+    tags: ["Adventure", "Culture"],
+    travelStyle: "Solo",
+    estimatedPrice: "$1,000",
+  },
+  {
+    id: 2,
+    name: "French Reverie",
+    imageUrl: "/assets/images/sample2.jpg",
+    itinerary:  "Paris" ,
+    tags: ["Relaxation", "Culinary"],
+    travelStyle: "Family",
+    estimatedPrice: "$2,000",
+  },
+  {
+    id: 3,
+    name: "Zen Break",
+    imageUrl: "/assets/images/sample3.jpg",
+    itinerary:  "Japan" ,
+    tags: ["Shopping", "Luxury"],
+    travelStyle: "Couple",
+    estimatedPrice: "$3,000",
+  },
+  {
+    id: 4,
+    name: "Adventure in Westeros",
+    imageUrl: "/assets/images/sample4.jpg",
+    itinerary:  "Croatia" ,
+    tags: ["Historical", "Culture"],
+    travelStyle: "Friends",
+    estimatedPrice: "$4,000",
+  },
+];
+export const users = [
+  {
+    id: 1,
+    name: "John Doe",
+    email: "john.doe@example.com",
+    imageUrl: "/assets/images/david.webp",
+    dateJoined: formatDate("2025-01-01"),
+    itineraryCreated: 10,
+    status: "user",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    email: "jane.smith@example.com",
+    imageUrl: "/assets/images/david.webp",
+    dateJoined: formatDate("2025-01-02"),
+    itineraryCreated: 4,
+    status: "user",
+  },
+  {
+    id: 3,
+    name: "John Smith",
+    email: "john.smith@example.com",
+    imageUrl: "/assets/images/david.webp",
+    dateJoined: formatDate("2025-01-03"),
+    itineraryCreated: 8,
+    status: "admin",
   },
 ];
 

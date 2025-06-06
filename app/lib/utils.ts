@@ -41,14 +41,9 @@ export function getFirstWord(input: string = ""): string {
   return input.trim().split(/\s+/)[0] || "";
 }
 
-export const calculateTrendPercentage = (
-  countOfThisMonth: number,
-  countOfLastMonth: number
-): TrendResult => {
+export const calculateTrendPercentage = (countOfThisMonth: number, countOfLastMonth: number): TrendResult => {
   if (countOfLastMonth === 0) {
-    return countOfThisMonth === 0
-      ? { trend: "no change", percentage: 0 }
-      : { trend: "increment", percentage: 100 };
+    return countOfThisMonth === 0 ? { trend: "no change", percentage: 0 } : { trend: "increment", percentage: 100 };
   }
 
   const change = countOfThisMonth - countOfLastMonth;
@@ -64,7 +59,5 @@ export const calculateTrendPercentage = (
 };
 
 export const formatKey = (key: keyof TripFormData) => {
-  return key
-    .replace(/([A-Z])/g, " $1")
-    .replace(/^./, (str) => str.toUpperCase());
+  return key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase());
 };
