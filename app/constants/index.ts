@@ -70,7 +70,7 @@ export const allTrips: TripCardProps[] = [
     estimatedPrice: "$4,000",
   },
 ];
-export const users = [
+export const users: UserData[] = [
   {
     id: 1,
     name: "John Doe",

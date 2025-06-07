@@ -1,5 +1,5 @@
 declare interface BaseUser {
-  id: string;
+  id: string | number;
   name: string;
   email: string;
   dateJoined: string;
