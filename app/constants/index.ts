@@ -37,7 +37,7 @@ export const allTrips: TripCardProps[] = [
     id: 1,
     name: "Tropical Rewind",
     imageUrl: "/assets/images/sample1.jpg",
-    itinerary:  "Thailand" ,
+    itinerary: "Thailand",
     tags: ["Adventure", "Culture"],
     travelStyle: "Solo",
     estimatedPrice: "$1,000",
@@ -46,7 +46,7 @@ export const allTrips: TripCardProps[] = [
     id: 2,
     name: "French Reverie",
     imageUrl: "/assets/images/sample2.jpg",
-    itinerary:  "Paris" ,
+    itinerary: "Paris",
     tags: ["Relaxation", "Culinary"],
     travelStyle: "Family",
     estimatedPrice: "$2,000",
@@ -55,7 +55,7 @@ export const allTrips: TripCardProps[] = [
     id: 3,
     name: "Zen Break",
     imageUrl: "/assets/images/sample3.jpg",
-    itinerary:  "Japan" ,
+    itinerary: "Japan",
     tags: ["Shopping", "Luxury"],
     travelStyle: "Couple",
     estimatedPrice: "$3,000",
@@ -64,7 +64,7 @@ export const allTrips: TripCardProps[] = [
     id: 4,
     name: "Adventure in Westeros",
     imageUrl: "/assets/images/sample4.jpg",
-    itinerary:  "Croatia" ,
+    itinerary: "Croatia",
     tags: ["Historical", "Culture"],
     travelStyle: "Friends",
     estimatedPrice: "$4,000",
@@ -139,26 +139,9 @@ export const chartOneData: object[] = [
   },
 ];
 
-export const travelStyles = [
-  "Relaxed",
-  "Luxury",
-  "Adventure",
-  "Cultural",
-  "Nature & Outdoors",
-  "City Exploration",
-];
+export const travelStyles = ["Relaxed", "Luxury", "Adventure", "Cultural", "Nature & Outdoors", "City Exploration"];
 
-export const interests = [
-  "Food & Culinary",
-  "Historical Sites",
-  "Hiking & Nature Walks",
-  "Beaches & Water Activities",
-  "Museums & Art",
-  "Nightlife & Bars",
-  "Photography Spots",
-  "Shopping",
-  "Local Experiences",
-];
+export const interests = ["Food & Culinary", "Historical Sites", "Hiking & Nature Walks", "Beaches & Water Activities", "Museums & Art", "Nightlife & Bars", "Photography Spots", "Shopping", "Local Experiences"];
 
 export const budgetOptions = ["Budget", "Mid-range", "Luxury", "Premium"];
 
@@ -166,12 +149,7 @@ export const groupTypes = ["Solo", "Couple", "Family", "Friends", "Business"];
 
 export const footers = ["Terms & Condition", "Privacy Policy"];
 
-export const selectItems = [
-  "groupType",
-  "travelStyle",
-  "interest",
-  "budget",
-] as (keyof TripFormData)[];
+export const selectItems = ["groupType", "travelStyle", "interest", "budget"] as (keyof TripFormData)[];
 
 export const comboBoxItems = {
   groupType: groupTypes,
