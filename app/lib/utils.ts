@@ -61,3 +61,34 @@ export const calculateTrendPercentage = (countOfThisMonth: number, countOfLastMo
 export const formatKey = (key: keyof TripFormData) => {
   return key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase());
 };
+
+export const getValidationError = (formData: TripFormData): string | null => {
+  const fieldLabels: Record<keyof TripFormData, string> = {
+    country: "a country",
+    duration: "a duration",
+    groupType: "a group type",
+    travelStyle: "a travel style",
+    interest: "an interest",
+    budget: "a budget",
+  };
+
+  const missingFields: (keyof TripFormData)[] = [];
+
+  for (const key in formData) {
+    const value = formData[key as keyof TripFormData];
+    const isInvalid = !value || (key === "duration" && +value < 1);
+
+    if (isInvalid) {
+      missingFields.push(key as keyof TripFormData);
+    }
+  }
+
+  if (missingFields.length === 0) return null;
+
+  if (missingFields.length === 1) {
+    const key = missingFields[0];
+    return `Please select ${fieldLabels[key]}`;
+  }
+
+  return "Please provide values for all fields";
+};

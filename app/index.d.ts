@@ -2,7 +2,7 @@ declare interface BaseUser {
   id: string | number;
   name: string;
   email: string;
-  dateJoined: string;
+  joinedAt: string;
   imageUrl: string;
 }
 
@@ -151,9 +151,9 @@ declare interface InfoPillProps {
 
 declare interface TripFormData {
   country: string;
+  duration: number;
+  groupType: string;
   travelStyle: string;
   interest: string;
   budget: string;
-  duration: number;
-  groupType: string;
 }
