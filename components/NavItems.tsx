@@ -44,12 +44,3 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
 };
 
 export default NavItems;
-
-/*
-  {
-    id: 1,
-    icon: "/assets/icons/home.svg",
-    label: "Dashboard",
-    href: "/dashboard",
-  },
-*/
