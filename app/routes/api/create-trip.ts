@@ -1,8 +1,9 @@
 import { type ActionFunctionArgs, data } from "react-router";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { parseMarkdownToJson } from "~/lib/utils";
+import { parseMarkdownToJson, parseTripData } from "~/lib/utils";
 import { appwriteConfig, database } from "~/appwrite/client";
 import { ID } from "appwrite";
+import { createProduct } from "~/lib/stripe";
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { country, numberOfDays, travelStyle, interests, budget, groupType, userId } = await request.json();
@@ -62,24 +63,33 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
     const trip = parseMarkdownToJson(textResult.response.text());
 
-    const imageResponse = await fetch(`https://api.unsplash.com/search/photos?query=${country} ${interests} ${travelStyle}&client_id=${unsplashApiKey}`);
+    const imageResponse = await fetch(
+      `https://api.unsplash.com/search/photos?query=${country} ${interests} ${travelStyle}&client_id=${unsplashApiKey}`
+    );
 
-    const imageUrls = (await imageResponse.json()).results.slice(0, 3).map((result: any) => result.urls?.regular || null);
+    const imageUrls = (await imageResponse.json()).results
+      .slice(0, 3)
+      .map((result: any) => result.urls?.regular || null);
 
-    const result = await database.createDocument(appwriteConfig.databaseId, appwriteConfig.tripCollectionId, ID.unique(), {
-      tripDetails: JSON.stringify(trip),
-      createdAt: new Date().toISOString(),
-      imageUrls,
-      userId,
+    const result = await database.createDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.tripCollectionId,
+      ID.unique(),
+      {
+        tripDetails: JSON.stringify(trip),
+        createdAt: new Date().toISOString(),
+        imageUrls,
+        userId,
+      }
+    );
+
+    const tripDetail = parseTripData(result.tripDetails) as Trip;
+    const tripPrice = parseInt(tripDetail.estimatedPrice.replace("$", ""), 10);
+    const paymentLink = await createProduct(tripDetail.name, tripDetail.description, imageUrls, tripPrice, result.$id);
+
+    await database.updateDocument(appwriteConfig.databaseId, appwriteConfig.tripCollectionId, result.$id, {
+      payment_link: paymentLink.url,
     });
-
-    // const tripDetail = parseTripData(result.tripDetails) as Trip;
-    // const tripPrice = parseInt(tripDetail.estimatedPrice.replace("$", ""), 10);
-    // const paymentLink = await createProduct(tripDetail.name, tripDetail.description, imageUrls, tripPrice, result.$id);
-
-    // await database.updateDocument(appwriteConfig.databaseId, appwriteConfig.tripCollectionId, result.$id, {
-    //   payment_link: paymentLink.url,
-    // });
 
     return data({ id: result.$id });
   } catch (e) {
