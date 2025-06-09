@@ -25,7 +25,20 @@ const TripDetails = ({ loaderData }: Route.ComponentProps) => {
 
   const tripData = parseTripData(loaderData?.trip?.tripDetails);
 
-  const { name, duration, itinerary, travelStyle, groupType, budget, interests, estimatedPrice, description, bestTimeToVisit, weatherInfo, country } = tripData || {};
+  const {
+    name,
+    duration,
+    itinerary,
+    travelStyle,
+    groupType,
+    budget,
+    interests,
+    estimatedPrice,
+    description,
+    bestTimeToVisit,
+    weatherInfo,
+    country,
+  } = tripData || {};
   const allTrips = loaderData?.allTrips as Trip[] | [];
 
   const pillItems = [
@@ -61,14 +74,26 @@ const TripDetails = ({ loaderData }: Route.ComponentProps) => {
         </header>
         <section className="gallery">
           {imageUrls.map((url: string, idx: number) => (
-            <img src={url} alt="trip Image" key={idx} className={cn("w-full rounded-xl object-cover", idx === 0 ? "md:col-span-2 md:row-span-2 h-[330px]" : "md:row-span-1 h-[150px]")} />
+            <img
+              src={url}
+              alt="trip Image"
+              key={idx}
+              className={cn(
+                "w-full rounded-xl object-cover",
+                idx === 0 ? "md:col-span-2 md:row-span-2 h-[330px]" : "md:row-span-1 h-[150px]"
+              )}
+            />
           ))}
         </section>
         <section className="flex gap-3 md:gap-5 items-center flex-wrap">
           <ChipListComponent id="travel-chip">
             <ChipsDirective>
               {pillItems.map((pill, i) => (
-                <ChipDirective key={i} text={getFirstWord(pill.text)} cssClass={`${pill.bg} !text-base !font-medium !px-4`} />
+                <ChipDirective
+                  key={i}
+                  text={getFirstWord(pill.text)}
+                  cssClass={`${pill.bg} !text-base !font-medium !px-4`}
+                />
               ))}
             </ChipsDirective>
           </ChipListComponent>
@@ -140,7 +165,15 @@ const TripDetails = ({ loaderData }: Route.ComponentProps) => {
         <h2 className="p-24-semibold text-dark-100">Popular Trips</h2>
         <div className="trip-grid">
           {allTrips.map((trip) => (
-            <TripCard key={trip.id} id={trip.id} name={trip.name} imageUrl={trip.imageUrls[0]} itinerary={trip.itinerary?.[0]?.location ?? ""} tags={[trip.travelStyle, trip.groupType, trip.budget, trip.interests]} estimatedPrice={trip.estimatedPrice} />
+            <TripCard
+              key={trip.id}
+              id={trip.id}
+              name={trip.name}
+              imageUrl={trip.imageUrls[0]}
+              itinerary={trip.itinerary?.[0]?.location ?? ""}
+              tags={[trip.travelStyle, trip.groupType, trip.budget, trip.interests]}
+              estimatedPrice={trip.estimatedPrice}
+            />
           ))}
         </div>
       </section>
