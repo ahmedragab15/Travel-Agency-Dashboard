@@ -1,7 +1,7 @@
 import Stripe from "stripe";
 
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2025-03-31.basil",
+  apiVersion: "2025-05-28.basil",
 });
 
 export const createProduct = async (
@@ -29,7 +29,7 @@ export const createProduct = async (
     after_completion: {
       type: "redirect",
       redirect: {
-        url: `${process.env.VITE_BASE_URL}/travel/${tripId}/success`,
+        url: `${import.meta.env.VITE_BASE_URL}/travel/${tripId}/success`,
       },
     },
   });
