@@ -50,6 +50,9 @@ and many more, built for scalability and a smooth user experience.
 
 ## <a name="screenshots">📸 Screenshots</a>
 
+   <img src="public/assets/preview/sign-in.png" >
+  <br />
+
    <img src="public/assets/preview/home.png" >
   <br />
 
