@@ -1,8 +1,6 @@
 <div align="center">
   <br />
-    <a href="https://www.youtube.com/watch?v=xZ1ba-RLrjo" target="_blank">
       <img src="public/assets/preview/hero.png" alt="Project Banner">
-    </a>
   <br />
   <div>
     <img alt="Static Badge" src="https://img.shields.io/badge/React-4c84f3?style=for-the-badge&logo=react&logoColor=white">
@@ -48,6 +46,10 @@ A modern Travel Agency platform with an admin dashboard and public site. Generat
 
 and many more, built for scalability and a smooth user experience.
 
+## <a name="liveDemo">🚀 Live Demo</a>
+
+[🔗 View Live Demo](https://travel-agency-psi-bice.vercel.app)
+
 ## <a name="screenshots">📸 Screenshots</a>
 
    <img src="public/assets/preview/sign-in.png" >
@@ -71,10 +73,6 @@ and many more, built for scalability and a smooth user experience.
    <img src="public/assets/preview/payment.png" >
  
 ---
-
-### 🚀 Live Demo
-
-[🔗 View Live Demo](https://travel-agency-psi-bice.vercel.app)
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
