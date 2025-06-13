@@ -39,13 +39,13 @@
   --color-red-100: #ff543d;
 
   --background-image-auth: url("/assets/images/auth-img.webp");
-  --background-image-hero: url("/assets/images/hero-img.png");
-  --background-image-card-1: url("/assets/images/card-img-1.png");
-  --background-image-card-2: url("/assets/images/card-img-2.png");
-  --background-image-card-3: url("/assets/images/card-img-3.png");
-  --background-image-card-4: url("/assets/images/card-img-4.png");
-  --background-image-card-5: url("/assets/images/card-img-5.png");
-  --background-image-card-6: url("/assets/images/card-img-6.png");
+  --background-image-hero: url("/assets/images/hero-img.webp");
+  --background-image-card-1: url("/assets/images/card-img-1.webp");
+  --background-image-card-2: url("/assets/images/card-img-2.webp");
+  --background-image-card-3: url("/assets/images/card-img-3.webp");
+  --background-image-card-4: url("/assets/images/card-img-4.webp");
+  --background-image-card-5: url("/assets/images/card-img-5.webp");
+  --background-image-card-6: url("/assets/images/card-img-6.webp");
   --background-image-linear100: linear-gradient(105deg, rgba(207, 241, 255, 0.8) 14.17%, rgba(255, 255, 255, 0) 54.71%);
   --background-image-linear200: linear-gradient(39deg, rgba(3, 3, 3, 0.54) -3.66%, rgba(6, 6, 6, 0) 45.57%);
   --shadow-100: 0px 1px 3px 0px rgba(16, 24, 40, 0.1), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
