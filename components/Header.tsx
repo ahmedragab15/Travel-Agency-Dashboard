@@ -2,14 +2,7 @@ import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import { Link, useLocation } from "react-router";
 import { cn } from "~/lib/utils";
 
-interface IProps {
-  title: string;
-  description: string;
-  ctaText?: string;
-  ctaUrl?: string;
-}
-
-const Header = ({ title, description, ctaText, ctaUrl }: IProps) => {
+const Header = ({ title, description, ctaText, ctaUrl }: HeaderProps) => {
   const location = useLocation();
 
   return (

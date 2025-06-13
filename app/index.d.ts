@@ -13,6 +13,13 @@ declare interface UserData extends BaseUser {
 
 declare type User = BaseUser;
 
+declare interface HeaderProps {
+  title: string;
+  description: string;
+  ctaText?: string;
+  ctaUrl?: string;
+}
+
 declare interface Country {
   name: string;
   coordinates: [number, number];

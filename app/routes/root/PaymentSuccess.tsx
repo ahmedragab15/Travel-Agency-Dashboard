@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link, type LoaderFunctionArgs } from "react-router";
 import type { Route } from "./+types/PaymentSuccess";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";

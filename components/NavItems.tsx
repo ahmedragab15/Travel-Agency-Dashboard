@@ -10,6 +10,7 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
     await logoutUser();
     navigate("/sign-in");
   };
+
   return (
     <section className="nav-items">
       <Link to="/" className="link-logo">
@@ -20,16 +21,27 @@ const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
         <nav>
           {sidebarItems.map(({ id, href, icon, label }) => (
             <NavLink to={href} key={id}>
-              {({ isActive }: { isActive: boolean }) => (
+              {({ isActive }) => (
                 <div className={cn("group nav-item", { "bg-primary-100 !text-white": isActive })} onClick={handleClick}>
-                  <img src={icon} alt={label} className={`group-hover:brightness-0 group-hover:invert ${isActive ? "brightness-0 invert" : "text-dark-200"}`} /> {label}
+                  <img
+                    src={icon}
+                    alt={label}
+                    className={`group-hover:brightness-0 group-hover:invert ${
+                      isActive ? "brightness-0 invert" : "text-dark-200"
+                    }`}
+                  />
+                  {label}
                 </div>
               )}
             </NavLink>
           ))}
         </nav>
         <footer className="nav-footer">
-          <img src={user?.imageUrl || "/assets/images/david.webp"} alt={user?.name || "Ahmed"} referrerPolicy="no-referrer" />
+          <img
+            src={user?.imageUrl || "/assets/images/david.webp"}
+            alt={user?.name || "Ahmed"}
+            referrerPolicy="no-referrer"
+          />
           <article>
             <h2 title={user?.name}>{user?.name}</h2>
             <p title={user?.email}>{user?.email}</p>

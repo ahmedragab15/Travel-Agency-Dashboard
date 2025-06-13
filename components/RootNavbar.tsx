@@ -26,24 +26,22 @@ const RootNavbar = () => {
           <h1>Tourvisto</h1>
         </Link>
 
-        <aside>
+        <nav className="nav-list">
           {user.status === "admin" && (
             <Link
               to="/dashboard"
-              className={cn("text-base font-normal text-white", {
+              className={cn("text-base font-normal text-dark-300", {
                 "text-dark-100": location.pathname.startsWith("/travel"),
               })}
             >
               Admin Panel
             </Link>
           )}
-
           <img src={user?.imageUrl || "/assets/images/david.wepb"} alt="user" referrerPolicy="no-referrer" />
-
           <button onClick={handleLogout} className="cursor-pointer">
             <img src="/assets/icons/logout.svg" alt="logout" className="size-6 rotate-180" />
           </button>
-        </aside>
+        </nav>
       </header>
     </nav>
   );

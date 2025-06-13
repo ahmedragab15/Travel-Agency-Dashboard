@@ -13,38 +13,36 @@
 
 ## <a name="introduction">🤖 Introduction</a>
 
-A modern Travel Agency platform with an admin dashboard and public site. Generate AI-powered trip itineraries based on country, travel style, interests, group type, and budget — and book trips with ease.
+A full-featured travel booking web app with a modern public site and admin dashboard. Users can generate AI-based trip itineraries tailored by country, interests, travel style, group type, and budget — then book trips effortlessly.
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
-- React 19
-- React Router v7 (framework mode)
-- Appwrite
+- React 19 + React Router v7 (framework mode)
+- Appwrite (backend & auth)
 - Tailwind CSS
-- Syncfusion
+- Syncfusion for rich UI components
+- Stripe
 - Vite
 
 ## <a name="features">🔋 Features</a>
 
-👉 Secure user authentication and login with google and data management
+🔐 Secure authentication (Google login supported)
 
-👉 AI-powered trip itinerary generator
+🤖 AI-driven itinerary generation
 
-👉 Trip booking functionality on the public website
+📆 Trip booking directly from the public site
 
-👉 Admin dashboard with trip and user management
+🛠 Admin dashboard for trip & user management
 
-👉 User growth metrics and trip analytics
+📈 Analytics dashboard with charts and user metrics
 
-👉 Interactive charts and trip statistics table
+📊 Interactive stats and trip details table
 
-👉 Detailed trip overview
+📱 Fully responsive with a modern UI
 
-👉 Responsive UI with a modern design
+🧱 Modular architecture with reusable components
 
-👉 Modular code architecture with reusable components
-
-and many more, built for scalability and a smooth user experience.
+🚀 Scalable and performance-focused
 
 ## <a name="liveDemo">🚀 Live Demo</a>
 

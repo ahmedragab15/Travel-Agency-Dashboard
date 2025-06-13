@@ -4,8 +4,12 @@ import { cn, getFirstWord } from "~/lib/utils";
 
 const TripCard = ({ id, name, imageUrl, itinerary, tags, estimatedPrice }: TripCardProps) => {
   const path = useLocation();
+
   return (
-    <Link to={path.pathname === "/" || path.pathname.startsWith("/travel") ? `/travel/${id}` : `/trips/${id}`} className="trip-card">
+    <Link
+      to={path.pathname === "/" || path.pathname.startsWith("/travel") ? `/travel/${id}` : `/trips/${id}`}
+      className="trip-card"
+    >
       <img src={imageUrl} alt={name} />
       <article>
         <h2>{name}</h2>
@@ -18,7 +22,17 @@ const TripCard = ({ id, name, imageUrl, itinerary, tags, estimatedPrice }: TripC
         <ChipListComponent id="travel-chip">
           <ChipsDirective>
             {tags.map((tag, index) => (
-              <ChipDirective key={index} text={getFirstWord(tag)} cssClass={cn(index % 2 === 0 ? "!bg-pink-50 !text-pink-500" : "!bg-success-50 !text-success-700")} />
+              <ChipDirective
+                key={index}
+                text={getFirstWord(tag)}
+                cssClass={cn(
+                  index % 2 === 0
+                    ? "!bg-pink-50 !text-pink-500"
+                    : index === 1
+                    ? "!bg-primary-50 !text-primary-500"
+                    : "!bg-success-50 !text-success-700"
+                )}
+              />
             ))}
           </ChipsDirective>
         </ChipListComponent>

@@ -5,8 +5,7 @@ import NavItems from "./NavItems";
 
 const MobileSidebar = () => {
   let sidebar: SidebarComponent;
-
-    const toggleSidebar = () => sidebar.toggle();
+  const toggleSidebar = () => sidebar.toggle();
 
   return (
     <div className="mobile-sidebar wrapper">
@@ -19,15 +18,16 @@ const MobileSidebar = () => {
           <img src="/assets/icons/menu.svg" alt="menu" className="size-7" />
         </button>
       </header>
-      <SidebarComponent width={270}
-       ref={(Sidebar) => (sidebar = Sidebar)}
+      <SidebarComponent
+        width={270}
+        ref={(Sidebar) => (sidebar = Sidebar)}
         created={() => sidebar.hide()}
         closeOnDocumentClick={true}
         showBackdrop={true}
         type="over"
-        >
-            <NavItems handleClick={toggleSidebar}/>
-        </SidebarComponent>
+      >
+        <NavItems handleClick={toggleSidebar} />
+      </SidebarComponent>
     </div>
   );
 };

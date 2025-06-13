@@ -68,7 +68,7 @@
     @apply p-6 flex flex-col gap-6 bg-white shadow-400 rounded-20 text-dark-100;
 
     .content {
-      @apply flex flex-row md:flex-col-reverse xl:flex-row xl:items-center gap-3 justify-between;
+      @apply flex flex-col-reverse xl:flex-row xl:items-center gap-3 justify-between;
     }
   }
 
@@ -305,7 +305,8 @@
         @apply text-base md:text-2xl font-bold text-dark-100;
       }
     }
-    aside {
+    aside,
+    .nav-list {
       @apply flex gap-4 items-center;
       img {
         @apply size-10 rounded-full aspect-square;

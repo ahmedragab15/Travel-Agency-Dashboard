@@ -108,7 +108,13 @@ const createTrip = ({ loaderData }: Route.ComponentProps) => {
             <label htmlFor="location">Location on the world map</label>
             <MapsComponent>
               <LayersDirective>
-                <LayerDirective shapeData={world_map} dataSource={mapData} shapePropertyPath="name" shapeDataPath="country" shapeSettings={{ colorValuePath: "color", fill: "#e5e5e5" }} />
+                <LayerDirective
+                  shapeData={world_map}
+                  dataSource={mapData}
+                  shapePropertyPath="name"
+                  shapeDataPath="country"
+                  shapeSettings={{ colorValuePath: "color", fill: "#e5e5e5" }}
+                />
               </LayersDirective>
             </MapsComponent>
           </div>
@@ -205,7 +211,11 @@ const createTrip = ({ loaderData }: Route.ComponentProps) => {
           )}
           <footer className="px-6 w-full">
             <ButtonComponent type="submit" className="button-class !h-12 !w-full" disabled={loading}>
-              <img src={`/assets/icons/${loading ? "loader" : "magic-star"}.svg`} alt="button icon" className={cn("size-5", { "animate-spin": loading })} />
+              <img
+                src={`/assets/icons/${loading ? "loader" : "magic-star"}.svg`}
+                alt="button icon"
+                className={cn("size-5", { "animate-spin": loading })}
+              />
               <span className="p-16-semibold text-white">{loading ? "Generating..." : "Generate Trip"}</span>
             </ButtonComponent>
           </footer>

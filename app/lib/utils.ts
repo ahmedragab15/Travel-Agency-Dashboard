@@ -6,9 +6,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const formatDate = (dateString: string): string => {
-  return dayjs(dateString).format("MMMM DD, YYYY");
-};
+export const formatDate = (dateString: string): string => dayjs(dateString).format("MMMM DD, YYYY");
 
 export function parseMarkdownToJson(markdownText: string): unknown | null {
   const regex = /```json\n([\s\S]+?)\n```/;
@@ -58,9 +56,7 @@ export const calculateTrendPercentage = (countOfThisMonth: number, countOfLastMo
   }
 };
 
-export const formatKey = (key: keyof TripFormData) => {
-  return key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase());
-};
+export const formatKey = (key: keyof TripFormData) =>  key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase());
 
 export const getValidationError = (formData: TripFormData): string | null => {
   const fieldLabels: Record<keyof TripFormData, string> = {
