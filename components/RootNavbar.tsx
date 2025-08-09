@@ -27,7 +27,7 @@ const RootNavbar = () => {
         </Link>
 
         <nav className="nav-list">
-          {user.status === "admin" && (
+          {/* {user.status === "admin" && ( */}
             <Link
               to="/dashboard"
               className={cn("text-base font-normal text-dark-300", {
@@ -36,7 +36,7 @@ const RootNavbar = () => {
             >
               Admin Panel
             </Link>
-          )}
+          {/* )} */}
           <img src={user?.imageUrl || "/assets/images/david.webp"} alt="user" referrerPolicy="no-referrer" />
           <button onClick={handleLogout} className="cursor-pointer">
             <img src="/assets/icons/logout.svg" alt="logout" className="size-6 rotate-180" />
